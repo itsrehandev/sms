@@ -15,6 +15,7 @@ public class Product {
         this.sellingPrice = 0;
         this.quantity = 0;
         this.category = "General";
+        totalProducts++ ; 
     }
     
     // Constructor 2: Basic info
@@ -25,16 +26,53 @@ public class Product {
         this.sellingPrice = 0;
         this.quantity = 0;
         this.category = "General";
+        totalProducts++;
     }
     
     // Constructor 3: Complete info
-    public Product(String productId, String productName, double costPrice, 
-                   double sellingPrice, int quantity, String category) {
+    public Product(String productId, String productName, double costPrice, double sellingPrice, int quantity, String category) 
+    {
         this.productId = productId;
-        this.productName = productName;
-        this.costPrice = costPrice;
-        this.sellingPrice = sellingPrice;
-        this.quantity = quantity;
+
+        //Syed Mujahid After Mids
+        if(productName.isEmpty())
+        {
+            System.out.println("Prodcut Name cannot be Empty");
+            this.productName = "Unknown";
+        }
+        else
+        {
+            this.productName = productName;
+        }
+
+        if(costPrice <= 0)
+            
+        {
+            System.out.println("price should be greater than 0");
+        }
+        else
+            
+        {
+            this.costPrice = costPrice;
+        }
+        if(sellingPrice < 0)
+        {
+            System.out.println("Selling Price cannot be Negative");
+        }
+        else
+        {
+            this.sellingPrice = sellingPrice;
+        }
+        if(quantity < 0)
+        {
+            System.out.println("Quantity cannot be negative");
+        }
+        else
+        {
+            this.quantity = quantity;
+        }
+        totalProducts++ ;
+        //Syed Mujahid Ends
         this.category = category;
     }
     
@@ -46,6 +84,7 @@ public class Product {
         this.sellingPrice = other.sellingPrice;
         this.quantity = other.quantity;
         this.category = other.category;
+        totalProducts++;
     }
     
     public String getProductId() {
@@ -115,6 +154,46 @@ public class Product {
         System.out.println("Category: " + this.category);
         System.out.println("Profit per unit: Rs. " + (this.sellingPrice - this.costPrice));
         System.out.println("Total Profit: Rs. " + this.calculateProfit());
+        System.out.println("Total Products Created: " + totalProducts);
         System.out.println("==================================\n");
+        
     }
+
+
+//Syed Mujahid after Mids
+
+public void setProductName(String productName)
+{
+    if(!productName.isEmpty())
+    {
+        this.productName = productName;
+    }
+    
+}
+
+public void increaseStock(int qty)
+{
+    if(qty > 0)
+    {
+        quantity += qty;
+    }
+}
+
+public boolean decreaseStock(int qty)
+{
+    if(qty > 0 && qty <= quantity)
+    {
+        quantity -= qty;
+        return true;
+    }
+    return false;
+}
+
+public String toCSV()
+{
+    return productId + "," +productName + "," +costPrice + "," +sellingPrice + "," +quantity + "," +category;
+}
+
+
+
 }
