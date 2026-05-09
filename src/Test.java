@@ -30,12 +30,9 @@ public class Test {
         shirt.printProductInfo();
 
         // CUSTOMER TESTING
-        Customer customer1 = new Customer(
-                "C001",
-                "Ali",
-                "03001234567",
-                "Rawalpindi"
-        );
+        Customer customer = new Customer();
+        customer.printCustomerInfo();
+        Customer customer1 = new Customer("C001","Ali","03001234567","Rawalpindi");
 
         customer1.printCustomerInfo();
 
