@@ -6,7 +6,7 @@ public class Customer
     private String address;
     private static int totalCustomers = 0;
 
-    Customer()
+    public Customer()
     {
         customerId = "C000";
         name = "Unknown";
@@ -15,7 +15,7 @@ public class Customer
         totalCustomers++;
     }
 
-    Customer(String customerId, String name, String phoneNumber, String address)
+    public Customer(String customerId, String name, String phoneNumber, String address)
     {
         this.customerId = customerId;
         this.name = name;
@@ -28,7 +28,7 @@ public class Customer
     {
         return customerId;
     }
-    public String name()
+    public String getName()
     {
         return name;
     }
@@ -40,14 +40,22 @@ public class Customer
     {
         return address;
     }
-    public int getTotalCustomer()
+    public static int getTotalCustomer()
     {
         return totalCustomers;
     }
 
     public void setName(String name)
     {
-        this.name = name;
+        if(!name.isEmpty())
+        {
+            this.name = name;
+        }
+        else
+        {
+            System.out.println("Name cannot be empty");
+        }
+        
     }
     public void setPhoneNumber(String phoneNumber)
     {
@@ -71,7 +79,7 @@ public class Customer
 
     public String toCSV()
     {
-        return customerId+ "," +name+ "," +phoneNnumber+ "," +address+ "," +totalCustomers;
+        return customerId+ "," +name+ "," +phoneNnumber+ "," +address;
     }
 
 
