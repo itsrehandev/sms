@@ -1,8 +1,21 @@
+import rehan.LoginPanel;
+
+import java.awt.*;
 import java.util.ArrayList;
+import javax.swing.*;
 
 public class Test {
     public static void main(String[] args) {
-
+        // Login Panel
+        SwingUtilities.invokeLater(() ->{
+            JFrame window = new JFrame("Login to continue");
+            window.setContentPane(new LoginPanel());
+            window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            window.pack();
+            window.setResizable(true);
+            window.setVisible(true);
+            window.setMinimumSize(new Dimension(400,300));
+        });
         System.out.println("Welcome to Sales Management System");
 
         // PRODUCT TESTING
@@ -46,6 +59,5 @@ public class Test {
         System.out.println(shirt.toCSV());
 
         System.out.println("\nCustomer CSV:");
-        System.out.println(customer1.toCSV());
-    }
+        System.out.println(customer1.toCSV());    }
 }
