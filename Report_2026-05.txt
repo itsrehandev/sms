@@ -1,0 +1,14 @@
+=====================================
+   MONTHLY SALES REPORT
+   Month: 2026-05
+=====================================
+
+SALES TRANSACTIONS:
+-----------------------------------
+No sales recorded for this month.
+-----------------------------------
+SUMMARY:
+Total Transactions: 0
+Total Items Sold: 0
+Total Sales Amount: Rs.0.00
+=====================================
