@@ -153,8 +153,7 @@ public class SalesPanel extends JPanel {
                 String productId = productIdField.getText().trim();
                 int quantity = Integer.parseInt(quantityField.getText().trim());
                 double discount = Double.parseDouble(discountField.getText().trim());
-
-                if (productId.isEmpty() || quantity <= 0) {
+                if (productId.isEmpty() || quantity <= 0 || !InputValidator.isValidDiscount(discount) || !InputValidator.hasSufficientStock(productId,quantity,inventory)) {
                     JOptionPane.showMessageDialog(this, "Please enter valid product details!", "Error", JOptionPane.ERROR_MESSAGE);
                     return;
                 }

@@ -129,7 +129,7 @@ public class FileHandler {
             }
             scanner.close();
         } catch (FileNotFoundException e) {
-            System.out.println("Sales file not found. Creating new file: " + filename);
+            System.out.println("Sales file not found. " + filename);
         }
         return sales;
     }
@@ -150,15 +150,13 @@ public class FileHandler {
     }
 
     // Check if file exists
-    public static boolean fileExists(String filename) {
-        return new File(filename).exists();
-    }
 
     // Create header for new CSV if it doesn't exist
     public static void createProductsFileIfNotExists(String filename) {
-        if (!fileExists(filename)) {
+        File f = new File(filename);
+        if (f.exists()) {
             try {
-                PrintWriter writer = new PrintWriter(new FileWriter(filename));
+                PrintWriter writer = new PrintWriter(new FileWriter(f));
                 writer.println("ProductID,ProductName,CostPrice,SellingPrice,Quantity,Category");
                 writer.close();
                 System.out.println("Created new products file: " + filename);
@@ -169,9 +167,10 @@ public class FileHandler {
     }
 
     public static void createSalesFileIfNotExists(String filename) {
-        if (!fileExists(filename)) {
+        File f = new File(filename);
+        if (f.exists()) {
             try {
-                PrintWriter writer = new PrintWriter(new FileWriter(filename));
+                PrintWriter writer = new PrintWriter(new FileWriter(f));
                 writer.println("SaleID,ProductID,ProductName,QuantitySold,UnitPrice,TotalAmount,Date");
                 writer.close();
                 System.out.println("Created new sales file: " + filename);

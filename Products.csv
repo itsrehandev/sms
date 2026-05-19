@@ -1,3 +1,12 @@
 ProductID,ProductName,CostPrice,SellingPrice,Quantity,Category
-0001,Surf Excel,980.0,1050.0,40,Cleaning
-0002,Cleaning Brush,300.0,450.0,11,Cleaning
+P001,Laptop,40000.0,65000.0,5,Electronics
+P002,Mouse,800.0,1500.0,48,Electronics
+P003,Keyboard,1500.0,3000.0,30,Electronics
+P004,Monitor,15000.0,25000.0,10,Electronics
+P005,Shirts,200.0,500.0,93,Clothing
+P006,Pants,300.0,800.0,80,Clothing
+P007,Shoes,800.0,2000.0,50,Footwear
+P008,Books,150.0,300.0,100,Books
+P009,Surf Excel,980.0,1050.0,21,Cleaning
+P010,Cleaning Brush,300.0,450.0,11,Cleaning
+P011,Sofa,45000.0,55000.0,10,Furniture

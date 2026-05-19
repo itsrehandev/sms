@@ -1,8 +1,11 @@
-public class Customer 
+// For future : Like Shop owners can register regular customer and manage their
+// records like a khata system. where customer pays
+// at the end of the month or in advance and they buy for "free" throughout the month.
+public class Customer
 {
     private final String customerId;
     private String name;
-    private String phoneNnumber;
+    private String phoneNumber;
     private String address;
     private static int totalCustomers = 0;
 
@@ -10,7 +13,7 @@ public class Customer
     {
         customerId = "C000";
         name = "Unknown";
-        phoneNnumber = "";
+        phoneNumber = "";
         address = "";
         totalCustomers++;
     }
@@ -19,7 +22,7 @@ public class Customer
     {
         this.customerId = customerId;
         this.name = name;
-        this.phoneNnumber = phoneNumber;
+        this.phoneNumber = phoneNumber;
         this.address = address;
         totalCustomers++;
     }
@@ -34,7 +37,7 @@ public class Customer
     }
     public String getPhoneNumber()
     {
-        return phoneNnumber;
+        return phoneNumber;
     }
     public String getAddress()
     {
@@ -59,7 +62,7 @@ public class Customer
     }
     public void setPhoneNumber(String phoneNumber)
     {
-        this.phoneNnumber = phoneNumber;
+        this.phoneNumber = phoneNumber;
     }
     public void setAddress(String address)
     {
@@ -71,7 +74,7 @@ public class Customer
         System.out.println("\n========== Customer INFO ==========");
         System.out.println("Customer ID: "+customerId);
         System.out.println("Customer Name: "+name);
-        System.out.println("Customer Phone Number: "+phoneNnumber);
+        System.out.println("Customer Phone Number: "+phoneNumber);
         System.out.println("Customer Address: "+address);
         System.out.println("Total Customers: "+totalCustomers);
         System.out.println("==================================\n");
@@ -79,7 +82,7 @@ public class Customer
 
     public String toCSV()
     {
-        return customerId+ "," +name+ "," +phoneNnumber+ "," +address;
+        return customerId+ "," +name+ "," +phoneNumber+ "," +address;
     }
 
 

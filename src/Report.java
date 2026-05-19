@@ -80,7 +80,7 @@ public class Report {
         
         report.append("=====================================\n");
         report.append("   MONTHLY SALES REPORT\n");
-        report.append("   Month: ").append(reportMonth).append("\n");
+        report.append("   Month: "+ reportMonth+ "\n");
         report.append("=====================================\n\n");
         
         report.append("SALES TRANSACTIONS:\n");

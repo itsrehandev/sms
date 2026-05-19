@@ -71,25 +71,6 @@ public class Inventory {
         return totalInventories;
     }
     
-    public void updateProductStock(String productId, int newQuantity) {
-        Product p = this.searchProduct(productId);
-        if (p != null) {
-            p.setQuantity(newQuantity);
-            System.out.println("Stock updated for: " + p.getProductName());
-        }
-    }
-    
-    // Get low stock products (below 10 units)
-    public ArrayList<Product> getLowStockProducts() {
-        ArrayList<Product> lowStock = new ArrayList<>();
-        for (Product p : products) {
-            if (p.getQuantity() < 10) {
-                lowStock.add(p);
-            }
-        }
-        return lowStock;
-    }
-    
     // Get low stock products with custom limit
     public ArrayList<Product> getLowStockProducts(int limit) {
         ArrayList<Product> lowStock = new ArrayList<>();
@@ -110,15 +91,13 @@ public class Inventory {
     }
     
     // Remove product
-    public boolean removeProduct(String productId) {
+    public void removeProduct(String productId) {
         for (int i = 0; i < products.size(); i++) {
             if (products.get(i).getProductId().equals(productId)) {
                 products.remove(i);
                 System.out.println("Product removed!");
-                return true;
             }
         }
-        return false;
     }
     
     // Print all products

@@ -37,7 +37,7 @@ public class Product {
         //Syed Mujahid After Mids
         if(productName.isEmpty())
         {
-            System.out.println("Prodcut Name cannot be Empty");
+            System.out.println("Product Name cannot be Empty");
             this.productName = "Unknown";
         }
         else
@@ -76,7 +76,7 @@ public class Product {
         this.category = category;
     }
     
-    // Constructor 4: Copy Constructor
+    // Copy Constructor
     public Product(Product other) {
         this.productId = other.productId;
         this.productName = other.productName;
@@ -108,10 +108,10 @@ public class Product {
     
     // setters with Validation
     public void setSellingPrice(double price) {
-        if (price > 0 && price > costPrice/2) {
+        if (price > 0 ) {
             this.sellingPrice = price;
         } else {
-            System.out.println("Selling price must be greater than half of cost price!");
+            System.out.println("Selling price must be Positive!");
         }
     }
     

@@ -1,12 +1,12 @@
 public class Sale extends Transaction {
-    private String productId;
-    private String productName;
-    private int quantitySold;
-    private double unitPrice;
-    private double discountPercent;
-    private String customerName;
+    private final String productId;
+    private final String productName;
+    private final int quantitySold;
+    private final double unitPrice;
+    private final double discountPercent;
+    private final String customerName;
 
-    // Constructor 1: Basic sale
+    // Constructor Basic sale
     public Sale(String saleId, String productId, String productName, 
                 int quantitySold, double unitPrice) {
         super(saleId, unitPrice * quantitySold);
@@ -18,7 +18,7 @@ public class Sale extends Transaction {
         this.customerName = "Guest Customer";
     }
     
-    // Constructor 2: With discount
+    // Constructor With discount
     public Sale(String saleId, String productId, String productName, 
                 int quantitySold, double unitPrice, double discountPercent) {
         super(saleId, unitPrice * quantitySold * (1 - discountPercent/100));
@@ -30,7 +30,7 @@ public class Sale extends Transaction {
         this.customerName = "Guest Customer";
     }
     
-    // Constructor 3: Complete information
+    // Constructor Complete information
     public Sale(String saleId, String productId, String productName, 
                 int quantitySold, double unitPrice, double discountPercent,
                 String customerName) {
